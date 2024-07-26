@@ -1,0 +1,204 @@
+@import "common";
+
+.todoList_container {
+  height: 100vh;
+  margin: 2rem;
+}
+
+.titleSection {
+  background-color: $background;
+  border-radius: 10px;
+  padding: 1rem;
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $fontcolor1;
+    }
+    .addBtn button {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.5rem;
+      background-color: $blue1;
+      border: none;
+      border-radius: 50%;
+      color: $fontcolor2;
+      transition: transform 0.3s ease-in-out;
+      &:focus {
+        outline: none;
+      }
+      &.rotate {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+.inputContainer {
+  display: none;
+  margin-top: 1rem;
+  input {
+    outline: none;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  &.show {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.category_inputWrap {
+  display: flex;
+  gap: 1rem;
+  button {
+    border: none;
+    background-color: $blue2;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+.column {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.categorySection,
+.taskSection {
+  padding: 1rem;
+  background-color: $background;
+  border-radius: 10px;
+  height: 70vh;
+}
+
+.categorySection {
+  width: 20%;
+  .category {
+    display: flex;
+    flex-direction: column;
+    .categoryItemWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    a {
+      padding: 5px;
+      color: gray;
+      cursor: pointer;
+      flex-grow: 1;
+    }
+    .active {
+      color: $fontcolor1;
+      background-color: $blue2;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+    .categoryDelete {
+      cursor: pointer;
+      margin-left: 0.5rem;
+      color: $blue2;
+      &:hover {
+        color: $blue1;
+      }
+    }
+  }
+  p.categoryNone {
+    font-size: 14px;
+    color: $fontcolor1;
+    text-align: center;
+  }
+}
+
+.taskSection {
+  width: 100%;
+  .categoryWrap {
+    padding: 1rem;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a {
+      margin: 0 1rem;
+      font-size: 2rem;
+      font-weight: 600;
+      color: rgb(70, 70, 70);
+    }
+    .taskAdd button {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.5rem;
+      background-color: $blue1;
+      border: none;
+      border-radius: 50%;
+      color: $fontcolor2;
+    }
+  }
+  .line {
+    margin-bottom: 1rem;
+    border: 2px solid lightgray;
+    width: 100%;
+  }
+}
+
+.tabWrap {
+  display: flex;
+  align-items: flex-end;
+}
+
+.tabContainer {
+  filter: drop-shadow(5px 0px 1px rgba(0, 0, 0, 0.4));
+}
+
+.tabStyle {
+  display: flex;
+  align-items: center;
+  padding: 1rem 3rem 1rem 2rem;
+  background-color: #f1f1f1;
+  position: relative;
+  z-index: 1;
+  border: none;
+  border-radius: 3px;
+  gap: 1rem;
+  cursor: pointer;
+  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 0% 100%);
+  &.active {
+    background-color: $blue2;
+    border-bottom: 1px solid white;
+    z-index: 2;
+  }
+}
+
+.taskNum {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: $blue1;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+}

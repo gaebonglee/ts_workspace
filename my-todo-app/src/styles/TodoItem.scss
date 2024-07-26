@@ -1,0 +1,43 @@
+@import "common";
+
+.task_container {
+  background-color: $blue2;
+  display: flex;
+  align-items: center;
+}
+
+.taskWrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 1rem;
+}
+
+.taskContent {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 10rem;
+  p {
+    margin: 0;
+    word-break: break-all; // 긴 단어를 줄 바꿈
+  }
+}
+
+.taskBtnWrap {
+  display: flex;
+  gap: 10px;
+  padding: 1rem;
+  align-items: center;
+}
+
+.taskBtnStyle {
+  background-color: $blue2;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+}
