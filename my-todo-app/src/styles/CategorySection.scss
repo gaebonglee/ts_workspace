@@ -1,0 +1,43 @@
+@import "common";
+
+.categorySection {
+  padding: 1rem;
+  background-color: $background;
+  border-radius: 10px;
+  height: 70vh;
+  width: 20%;
+  .category {
+    display: flex;
+    flex-direction: column;
+    .categoryItemWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    a {
+      padding: 5px;
+      color: gray;
+      cursor: pointer;
+      flex-grow: 1;
+    }
+    .active {
+      color: $fontcolor1;
+      background-color: $blue2;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+    .categoryDelete {
+      cursor: pointer;
+      margin-left: 0.5rem;
+      color: $blue2;
+      &:hover {
+        color: $blue1;
+      }
+    }
+  }
+  p.categoryNone {
+    font-size: 14px;
+    color: $fontcolor1;
+    text-align: center;
+  }
+}

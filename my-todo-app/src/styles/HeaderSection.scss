@@ -1,0 +1,85 @@
+@import "common";
+
+.titleSection {
+  background-color: $background;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  &.shrink {
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $fontcolor1;
+    }
+    .addBtn button {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.5rem;
+      background-color: $blue1;
+      border: none;
+      border-radius: 50%;
+      color: $fontcolor2;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+      &.rotate {
+        transform: rotate(45deg);
+      }
+    }
+  }
+  .inputContainer {
+    display: none;
+    margin-top: 1rem;
+    input {
+      outline: none;
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    &.show {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.category_inputWrap {
+  display: flex;
+  gap: 1rem;
+  button {
+    border: none;
+    background-color: $blue2;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
