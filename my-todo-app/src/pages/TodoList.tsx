@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 import "../styles/TodoList.scss";
-import TodoItem from "./TodoItem";
-import HeaderSection from "./HeaderSection";
-import CategorySection from "./CategorySection";
+import HeaderSection from "../components/HeaderSection";
+import Main from "../components/Main";
 import { Category, Task } from "../types/task";
 
 const TodoList: React.FC = () => {
-  const [isInputVisible, setIsInputVisible] = useState<boolean>(false);
   const [categories, setCategories] = useState<Category[]>([]);
   const [newCategory, setNewCategory] = useState<string>("");
   const [activeCategory, setActiveCategory] = useState<Category | null>(null);
-
-  // task 관련
   const [tasks, setTasks] = useState<Task[]>([]);
+  const [isInputVisible, setIsInputVisible] = useState<boolean>(false);
 
   const toggleInput = (): void => {
     setIsInputVisible(!isInputVisible);
@@ -28,7 +25,7 @@ const TodoList: React.FC = () => {
       setCategories(updatedCategories);
       setNewCategory("");
       setActiveCategory(updatedCategories[0]);
-      setIsInputVisible(false); // 카테고리 추가 후 input 숨김
+      setIsInputVisible(false);
     }
   };
 
@@ -38,26 +35,19 @@ const TodoList: React.FC = () => {
         newCategory={newCategory}
         setNewCategory={setNewCategory}
         handleAddCategory={handleAddCategory}
+        categories={categories}
         isInputVisible={isInputVisible}
         toggleInput={toggleInput}
-        categories={categories}
       />
       {categories.length > 0 && (
-        <div className="column">
-          <CategorySection
-            categories={categories}
-            activeCategory={activeCategory}
-            setActiveCategory={setActiveCategory}
-            setCategories={setCategories}
-          />
-          {activeCategory && (
-            <TodoItem
-              activeCategory={activeCategory}
-              tasks={tasks}
-              setTasks={setTasks}
-            />
-          )}
-        </div>
+        <Main
+          categories={categories}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+          tasks={tasks}
+          setTasks={setTasks}
+          setCategories={setCategories}
+        />
       )}
     </div>
   );
