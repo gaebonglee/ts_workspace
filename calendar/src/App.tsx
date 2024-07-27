@@ -1,12 +1,19 @@
+import React from "react";
+import SideCalendar from "./components/SideCalendar";
+import MainCalendar from "./components/MainCalendar";
 import "./App.css";
-import TodoList from "./pages/TodoList";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <TodoList />
+    <div className="app">
+      <div className="side-calendar">
+        <SideCalendar />
+      </div>
+      <div className="main-calendar">
+        <MainCalendar />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
