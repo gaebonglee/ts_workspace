@@ -3,9 +3,13 @@ import Calendar from "react-calendar";
 import moment from "moment";
 import "../styles/CustomCalendar.scss";
 
-const CustomCalendar: React.FC = () => {
+type CustomCalendarProps = {
+  className?: string;
+};
+
+const CustomCalendar: React.FC<CustomCalendarProps> = () => {
   return (
-    <div style={{ width: "100%" }}>
+    <div className={"customCalendar"} style={{ width: "100%" }}>
       <Calendar
         calendarType="gregory"
         formatDay={(locale, date) => moment(date).format("D")}

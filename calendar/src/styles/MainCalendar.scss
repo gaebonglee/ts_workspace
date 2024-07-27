@@ -1,1 +1,52 @@
-@import "./common.scss"
+@import "./common.scss";
+
+.main-calendar-wrapper {
+  .react-calendar__month-view__weekdays {
+    display: flex;
+    font-size: 14px;
+    background-color: rgb(238, 238, 238);
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    margin-top: 1rem;
+  }
+
+  .react-calendar__month-view__weekdays__weekday {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  .react-calendar__month-view__weekdays__weekday abbr {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .react-calendar__tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 14.285%;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #e6e6e6;
+    position: relative;
+    cursor: pointer;
+
+    .react-calendar__month-view__days__day {
+      display: flex;
+      justify-content: flex-start;
+      box-sizing: border-box;
+    }
+  }
+  .react-calendar__tile--now {
+    background-color: #7a9acb27;
+    abbr {
+      font-weight: 600;
+    }
+  }
+}

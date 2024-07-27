@@ -11,41 +11,33 @@
   }
 }
 
-//요일 밑줄 없애기
+// 요일 밑줄 없애기
 .react-calendar__month-view__weekdays abbr {
   text-decoration: none;
 }
 
-//년단위 버튼 없애기
+// 년단위 버튼 없애기
 .react-calendar__navigation__prev2-button,
 .react-calendar__navigation__next2-button {
   display: none;
 }
 
-//월 년 navigate
+// 월 년 navigate
 .react-calendar__navigation {
   justify-content: center;
 }
 
-//해당월의 날짜가 아닐 경우 투명도 설정
+// 해당 월의 날짜가 아닐 경우 투명도 설정
 .react-calendar__month-view__days__day--neighboringMonth {
   opacity: 0.2;
 }
 
-//요일라벨
-.react-calendar__month-view__weekdays {
-  text-align: center;
-  font-size: 15px;
-  margin: 10px 0;
-}
-
-//일요일에만 빨간글씨
+// 일요일에만 빨간 글씨
 .react-calendar__month-view__weekdays__weekday--weekend abbr[title="일요일"] {
   color: red;
 }
 
-//오늘날짜 폰트컬러
+// 오늘 날짜 폰트 컬러
 .react-calendar__tile--now {
   border: 1px solid gray;
 }
-

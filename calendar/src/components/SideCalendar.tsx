@@ -4,8 +4,8 @@ import "../styles/SideCalendar.scss";
 
 const SideCalendar: React.FC = () => {
   return (
-    <div>
-      <CustomCalendar />
+    <div className="side-calendar-wrapper" style={{ width: "100%" }}>
+      <CustomCalendar className="side-calendar" />
     </div>
   );
 };

@@ -1,1 +1,15 @@
 @import "./common.scss";
+
+.side-calendar-wrapper {
+  .react-calendar__navigation {
+    text-align: center;
+  }
+  .react-calendar__navigation__label {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .react-calendar__month-view__weekdays {
+    text-align: center;
+    margin: 10px 0;
+  }
+}
