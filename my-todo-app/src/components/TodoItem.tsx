@@ -39,6 +39,18 @@ const TodoItem: React.FC<TodoItemProps> = ({
     setActiveTab(tab);
   };
 
+  const handleToggleTaskCompletion = (taskId: number) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId ? { ...task, completed: !task.completed } : task
+      )
+    );
+  };
+
+  const handleDeleteTask = (taskId: number) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
+  };
+
   const getFilteredTasks = () => {
     const categoryTasks = tasks.filter(
       (task) => task.categoryId === activeCategory.id
@@ -62,12 +74,10 @@ const TodoItem: React.FC<TodoItemProps> = ({
             value={newTask}
             onChange={handleTaskInputChange}
           />
-          <button onClick={handleAddTask}>+</button>
+          <button onClick={handleAddTask}>Add</button>
         </div>
       </div>
-      {getFilteredTasks().length === 0 ? (
-        <p className="taskNone">할 일을 추가해주세요</p>
-      ) : (
+      <div className="fileContainer">
         <div className="tabWrap">
           <div className="tabContainer">
             <div
@@ -114,25 +124,37 @@ const TodoItem: React.FC<TodoItemProps> = ({
             </div>
           </div>
         </div>
-      )}
-      <div>
-        {getFilteredTasks().map((task) => (
-          <div key={task.id} className="task_container">
-            <div className="taskWrap">
-              <div className="taskContent">
-                <p>{task.text}</p>
+        <div className="taskBoard">
+          {getFilteredTasks().length === 0 ? (
+            <p className="taskNone">할 일을 추가해주세요</p>
+          ) : (
+            getFilteredTasks().map((task) => (
+              <div key={task.id} className="task_container">
+                <div className="taskWrap">
+                  <div className="taskContent">
+                    <p>{task.text}</p>
+                  </div>
+                  <div className="taskBtnWrap">
+                    <button
+                      className="taskBtnStyle"
+                      id="edit"
+                      onClick={() => handleToggleTaskCompletion(task.id)}
+                    >
+                      <FaCheck />
+                    </button>
+                    <button
+                      className="taskBtnStyle"
+                      id="delete"
+                      onClick={() => handleDeleteTask(task.id)}
+                    >
+                      <RiDeleteBin2Fill />
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div className="taskBtnWrap">
-                <button className="taskBtnStyle" id="edit">
-                  <FaCheck />
-                </button>
-                <button className="taskBtnStyle" id="delete">
-                  <RiDeleteBin2Fill />
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
+            ))
+          )}
+        </div>
       </div>
     </section>
   );
