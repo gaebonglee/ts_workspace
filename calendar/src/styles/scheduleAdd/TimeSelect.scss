@@ -3,14 +3,14 @@
 //react-datePicker
 
 .react-datepicker__input-container {
-
   position: relative;
   input[type="text"] {
     align-items: center;
     border: 1px solid lightgray;
-    padding: 5px;
-    width: 70px;
+    padding: 6px;
+    width: 85px;
     outline: none;
+    box-sizing: border-box;
   }
 }
 .react-datepicker-popper {
@@ -19,11 +19,12 @@
     display: none;
   }
 }
-
+.react-datepicker-wrapper {
+  padding-right: 5px;
+}
 .dateSelection {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 
   .datePicker {
     width: 120px;
@@ -40,6 +41,10 @@
     font-size: 14px;
     outline: none;
     font-size: 13px;
+    option {
+      
+      font-size: 13px;
+    }
   }
 
   span {

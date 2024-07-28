@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../../styles/scheduleAdd/TimeOption.scss";
 const generateTimeOptions = () => {
   const times = [];
   const formatTime = (hour: number, minute: number) => {
@@ -13,7 +13,11 @@ const generateTimeOptions = () => {
   for (let hour = 0; hour < 24; hour++) {
     for (let minute = 0; minute < 60; minute += 30) {
       times.push(
-        <option key={`${hour}:${minute}`} value={formatTime(hour, minute)}>
+        <option
+          key={`${hour}:${minute}`}
+          value={formatTime(hour, minute)}
+          className="optionStyle"
+        >
           {formatTime(hour, minute)}
         </option>
       );

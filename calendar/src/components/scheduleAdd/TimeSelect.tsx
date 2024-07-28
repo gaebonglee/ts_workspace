@@ -16,7 +16,7 @@ const TimeSelect = () => {
         dateFormat="yyyy.MM.dd"
       />
       <select className="selectBox">
-        <TimeOptions />
+        <TimeOptions/>
       </select>
       <span>~</span>
       <DatePicker
