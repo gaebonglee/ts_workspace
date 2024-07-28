@@ -1,0 +1,49 @@
+@import "../common.scss";
+
+//react-datePicker
+
+.react-datepicker__input-container {
+
+  position: relative;
+  input[type="text"] {
+    align-items: center;
+    border: 1px solid lightgray;
+    padding: 5px;
+    width: 70px;
+    outline: none;
+  }
+}
+.react-datepicker-popper {
+  left: 5rem !important;
+  .react-datepicker__triangle {
+    display: none;
+  }
+}
+
+.dateSelection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .datePicker {
+    width: 120px;
+    height: 30px;
+    border: 1px solid #cbcbcb;
+    padding-left: 5px;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .selectBox {
+    height: 30px;
+    border: 1px solid #cbcbcb;
+    font-size: 14px;
+    outline: none;
+    font-size: 13px;
+  }
+
+  span {
+    font-size: 14px;
+    padding: 0 5px;
+  }
+}

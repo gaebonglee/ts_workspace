@@ -10,13 +10,11 @@
     display: flex;
     align-items: center;
     padding-bottom: 1rem;
-
     .tit {
       font-size: 14px;
       font-weight: $fontWeight2;
-      width: 60px; // label width to align items
+      width: 60px;
     }
-
     .cont {
       display: flex;
       align-items: center;
@@ -66,7 +64,21 @@
 
   .place .cont {
     .pos_input input {
-      width: calc(100% - 110px); // Adjust width considering the button size
+      width: calc(100% - 110px);
+    }
+  }
+
+  .date {
+    .cont {
+      display: flex;
+      align-items: center;
+
+      .pos_right {
+        margin-left: 10px;
+        input[type="checkbox"] {
+          margin-right: 5px;
+        }
+      }
     }
   }
 }

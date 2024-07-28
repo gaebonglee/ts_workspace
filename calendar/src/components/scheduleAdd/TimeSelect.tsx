@@ -1,29 +1,34 @@
-import React from "react";
-
-const generateTimeOptions = () => {
-  const times = [];
-  const formatTime = (hour: number, minute: number) => {
-    const period = hour < 12 ? "오전" : "오후";
-    const adjustedHour = hour % 12 === 0 ? 12 : hour % 12;
-    return `${period} ${adjustedHour.toString().padStart(2, "0")}:${minute
-      .toString()
-      .padStart(2, "0")}`;
-  };
-
-  for (let hour = 0; hour < 24; hour++) {
-    for (let minute = 0; minute < 60; minute += 30) {
-      times.push(
-        <option key={`${hour}:${minute}`} value={formatTime(hour, minute)}>
-          {formatTime(hour, minute)}
-        </option>
-      );
-    }
-  }
-  return times;
-};
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import TimeOptions from "./TimeOption";
+import "../../styles/scheduleAdd/TimeSelect.scss";
 
 const TimeSelect = () => {
-  return <>{generateTimeOptions()}</>;
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
+  return (
+    <div className="dateSelection">
+      <DatePicker
+        selected={startDate}
+        onChange={(date) => setStartDate(date as Date)}
+        dateFormat="yyyy.MM.dd"
+      />
+      <select className="selectBox">
+        <TimeOptions />
+      </select>
+      <span>~</span>
+      <DatePicker
+        selected={endDate}
+        onChange={(date) => setEndDate(date as Date)}
+        dateFormat="yyyy.MM.dd"
+      />
+      <select className="selectBox">
+        <TimeOptions />
+      </select>
+    </div>
+  );
 };
 
 export default TimeSelect;
