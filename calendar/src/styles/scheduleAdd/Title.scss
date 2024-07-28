@@ -1,0 +1,72 @@
+@import "../common.scss";
+
+.TitleWrap {
+  margin: 0;
+  padding-top: 12px;
+  border-bottom: 1px solid $borderline1;
+
+  .article {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+
+    .tit {
+      font-size: 14px;
+      font-weight: $fontWeight2;
+      width: 60px; // label width to align items
+    }
+
+    .cont {
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      .pos_input {
+        display: flex;
+        flex-grow: 1;
+
+        input[type="text"] {
+          width: 100%;
+          height: 30px;
+          border: 1px solid #cbcbcb;
+          padding-left: 5px;
+          outline: none;
+          font-size: 14px;
+        }
+      }
+
+      .pos_right {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        margin-left: 10px;
+        width: 80px;
+
+        input[type="checkbox"] {
+          margin-right: 5px;
+        }
+
+        button {
+          font-size: 12px;
+          font-weight: $fontWeight1;
+          height: 34px;
+          padding: 0 10px;
+          border: 1px solid #cccccc;
+          background-color: #f5f5f5;
+          cursor: pointer;
+        }
+
+        button:hover {
+          background-color: #e0e0e0;
+        }
+      }
+    }
+  }
+
+  .place .cont {
+    .pos_input input {
+      width: calc(100% - 110px); // Adjust width considering the button size
+    }
+  }
+}
