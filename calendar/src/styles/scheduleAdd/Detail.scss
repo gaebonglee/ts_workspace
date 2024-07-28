@@ -1,0 +1,58 @@
+@import "../common.scss";
+
+.detailWrap {
+  margin: 0;
+  padding-top: 12px;
+  border-bottom: 1px solid $borderline1;
+
+  .article {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+
+    .tit {
+      font-size: 14px;
+      font-weight: $fontWeight2;
+      width: 60px;
+    }
+  }
+
+  .comment {
+    .cont {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      textarea {
+        outline: none;
+        resize: none;
+        width: 100%;
+        height: 100px;
+        padding: 5px;
+        border: 1px solid $borderline2;
+        font-size: 13px;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+.stickerDesc {
+  display: flex;
+  font-size: 1.5rem;
+  gap: 1rem;
+
+  .selectTumb {
+    display: inline-block;
+    float: left;
+    vertical-align: top;
+  }
+
+  .historySticker {
+    display: flex;
+    gap: 0.5rem;
+    .sticker {
+      cursor: pointer;
+    }
+  }
+}
