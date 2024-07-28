@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../../styles/scheduleAdd/Detail.scss";
 const Detail = () => {
   return (
     <section className="detailWrap">

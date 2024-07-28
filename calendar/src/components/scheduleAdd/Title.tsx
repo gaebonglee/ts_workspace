@@ -1,3 +1,6 @@
+import React from 'react';
+import "../../styles/scheduleAdd/Title.scss"
+
 const Title = () => {
   return (
     <section className="TitleWrap">

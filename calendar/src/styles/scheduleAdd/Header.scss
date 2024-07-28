@@ -1,0 +1,55 @@
+@import "../common.scss";
+
+.headerSection {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid $borderline1;
+  .subTitle {
+    display: flex;
+    button {
+      background-color: white;
+      border: 1px solid $borderline2;
+      padding-top: 5px;
+    }
+  }
+  .enterPage {
+    padding: 0 1rem;
+    align-items: center;
+    .addSchedule {
+      font-size: 14px;
+      font-weight: $fontWeight2;
+    }
+    .backBtn {
+      position: relative;
+      font-size: 13px;
+      color: gray;
+      padding-left: 10px;
+      ::before {
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 0;
+        width: 1px;
+        height: 9px;
+        background-color: #999;
+      }
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+  .saveBtn {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 14px;
+    background-color: white;
+    border: 1px solid $borderline2;
+    .icon {
+      color: $maincolor;
+    }
+  }
+}

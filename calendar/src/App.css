@@ -20,3 +20,7 @@ h3 {
 .main-calendar {
   padding: 20px;
 }
+
+button {
+  cursor: pointer;
+}
